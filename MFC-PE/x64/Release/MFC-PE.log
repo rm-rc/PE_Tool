@@ -1,0 +1,34 @@
+﻿生成启动时间为 2023/8/31 15:48:01。
+     1>项目“C:\Users\DELL\Desktop\破\MFC-PE\MFC-PE\MFC-PE.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\vs2013\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"x64\Release\MFC-PE.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\vs2013\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"x64\Release\MFC-PE.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt "MFC-PE.cpp" "MFC-PEDlg.cpp"
+         MFC-PE.cpp
+         MFC-PEDlg.cpp
+     1>MFC-PEDlg.cpp(430): warning C4101: “hIcon”: 未引用的局部变量
+     1>MFC-PEDlg.cpp(425): warning C4101: “moduleHandles”: 未引用的局部变量
+     1>MFC-PEDlg.cpp(570): warning C4172: 返回局部变量或临时变量的地址
+     1>MFC-PEDlg.cpp(599): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>MFC-PEDlg.cpp(623): warning C4305: “参数”: 从“__int64”到“DWORD”截断
+     1>MFC-PEDlg.cpp(623): warning C4309: “参数”: 截断常量值
+     1>MFC-PEDlg.cpp(743): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\vs2013\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>MFC-PEDlg.cpp(744): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\vs2013\VC\include\stdio.h(211) : 参见“fopen”的声明
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0804" /Ix64\Release\ /nologo /fo"x64\Release\MFC-PE.res" MFC-PE.rc 
+       Link:
+         D:\vs2013\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\DELL\Desktop\破\MFC-PE\x64\Release\MFC-PE.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:D:\vs2013\VC\Include\Manifest\dpiaware.manifest /DEBUG /PDB:"C:\Users\DELL\Desktop\破\MFC-PE\x64\Release\MFC-PE.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\DELL\Desktop\破\MFC-PE\x64\Release\MFC-PE.lib" /MACHINE:X64 "x64\Release\MFC-PE.res"
+         "x64\Release\MFC-PE.obj"
+         "x64\Release\MFC-PEDlg.obj"
+         x64\Release\stdafx.obj
+         正在生成代码
+     1>c:\users\dell\desktop\破\mfc-pe\mfc-pe\mfc-pedlg.h(53): warning C4715: “myCompare::operator()”: 不是所有的控件路径都返回值
+         已完成代码的生成
+         MFC-PE.vcxproj -> C:\Users\DELL\Desktop\破\MFC-PE\x64\Release\MFC-PE.exe
+     1>已完成生成项目“C:\Users\DELL\Desktop\破\MFC-PE\MFC-PE\MFC-PE.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.73
