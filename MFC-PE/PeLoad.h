@@ -27,6 +27,8 @@ public:
 	virtual BOOL OnInitDialog();
 	BOOL OpenFileData(TCHAR* FileData);
 	VOID ShowOpenPe();
+	template<typename Types>
+	void PeSetText(CEdit* edit,const Types num);
 	TCHAR*  m_pFilePe;
 	DWORD m_dwFile_Size;
 	IMAGE_DOS_HEADER File_Dos;		//DOSÍ·Êý¾Ý

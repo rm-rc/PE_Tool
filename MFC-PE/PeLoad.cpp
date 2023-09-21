@@ -126,107 +126,63 @@ BOOL PeLoad::OpenFileData(TCHAR* FileData)
 
 
 }
+template<typename Types>
+void PeLoad::PeSetText(CEdit* edit , Types num)
+{
+	TCHAR str[MAX_PATH] = { 0 };
+	_itow(num, str, 16);
+	edit->SetWindowTextW(_wcsupr(str));
+}
 
 VOID PeLoad::ShowOpenPe()
 {
-	TCHAR str[MAX_PATH] = { 0 };
-	//CString str;
+	TCHAR str[MAX_PATH] = {0};
+	/*//CString str;
 	//str.Format(L"%05d", File_Optional.image_Opeional32.Magic);
-	_itow(File_Optional.image_Opeional32.Magic, str, 16);
-	m_Magic.SetWindowTextW(_wcsupr(str));
+	
 	_itow(File_Optional.image_Opeional32.MajorLinkerVersion, str, 16);
-	m_MajorLinkVersion.SetWindowTextW(_wcsupr(str));
+	m_MajorLinkVersion.SetWindowTextW(_wcsupr(str));*/
 
-	_itow(File_Optional.image_Opeional32.MinorLinkerVersion, str, 16);
-	m_MinorLinkerVersion.SetWindowTextW(_wcsupr(str));
+	PeSetText(&m_Magic, File_Optional.image_Opeional32.Magic);
+	PeSetText(&m_MajorLinkVersion, File_Optional.image_Opeional32.MajorLinkerVersion);
+	PeSetText(&m_MinorLinkerVersion, File_Optional.image_Opeional32.MinorLinkerVersion);
 
-	_itow(File_Optional.image_Opeional32.SizeOfCode, str, 16);
-	m_SizeOfCode.SetWindowTextW(_wcsupr(str));
+	PeSetText(&m_SizeOfCode, File_Optional.image_Opeional32.SizeOfCode);
 
-	_itow(File_Optional.image_Opeional32.SizeOfInitializedData, str, 16);
-	m_SizeOfIntializedData.SetWindowTextW(_wcsupr(str));
+	PeSetText(&m_SizeOfIntializedData, File_Optional.image_Opeional32.SizeOfInitializedData);
+	PeSetText(&m_SizeOfUninitializedData, File_Optional.image_Opeional32.SizeOfUninitializedData);
+	
+	PeSetText(&m_AddressOfEntryPoint, File_Optional.image_Opeional32.AddressOfEntryPoint);
+	PeSetText(&m_BaseOfCode, File_Optional.image_Opeional32.BaseOfCode);
+	PeSetText(&m_BaseOfData, File_Optional.image_Opeional32.BaseOfData);
+	PeSetText(&m_ImageBase, File_Optional.image_Opeional32.ImageBase);
+	PeSetText(&m_SectionAlignment, File_Optional.image_Opeional32.SectionAlignment);
+	PeSetText(&m_FileAlignment, File_Optional.image_Opeional32.FileAlignment);
+	PeSetText(&m_MajorOperatingSystemVersion, File_Optional.image_Opeional32.MajorOperatingSystemVersion);
+	PeSetText(&m_MinorOperatingSystemVersion, File_Optional.image_Opeional32.MinorOperatingSystemVersion);
 
-	_itow(File_Optional.image_Opeional32.SizeOfUninitializedData, str, 16);
-	m_SizeOfUninitializedData.SetWindowTextW(_wcsupr(str));
+	PeSetText(&m_MajorImageVersion, File_Optional.image_Opeional32.MajorImageVersion);
+	PeSetText(&m_MinorImageVersion, File_Optional.image_Opeional32.MinorImageVersion);
+	PeSetText(&m_MajorSubsystemVersion, File_Optional.image_Opeional32.MajorSubsystemVersion);
+	PeSetText(&m_MinorSubsystemVersion, File_Optional.image_Opeional32.MinorSubsystemVersion);
+	PeSetText(&m_Win32VersionValue, File_Optional.image_Opeional32.Win32VersionValue);
 
-	///////////////////
-	_itow(File_Optional.image_Opeional32.AddressOfEntryPoint, str, 16);
-	m_AddressOfEntryPoint.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.BaseOfCode, str, 16);
-	m_BaseOfCode.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.BaseOfData, str, 16);
-	m_BaseOfData.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.ImageBase, str, 16);
-	m_ImageBase.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.SectionAlignment, str, 16);
-	m_SectionAlignment.SetWindowTextW(_wcsupr(str));
-
-	////////
-	_itow(File_Optional.image_Opeional32.FileAlignment, str, 16);
-	m_FileAlignment.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.MajorOperatingSystemVersion, str, 16);
-	m_MajorOperatingSystemVersion.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.MinorOperatingSystemVersion, str, 16);
-	m_MinorOperatingSystemVersion.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.MajorImageVersion, str, 16);
-	m_MajorImageVersion.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.MinorImageVersion, str, 16);
-	m_MinorImageVersion.SetWindowTextW(_wcsupr(str));
+	PeSetText(&m_SizeOfImage, File_Optional.image_Opeional32.SizeOfImage);
+	PeSetText(&m_SizeofHeaders, File_Optional.image_Opeional32.SizeOfHeaders);
+	PeSetText(&m_CheckStem, File_Optional.image_Opeional32.CheckSum);
+	PeSetText(&m_Subsystem, File_Optional.image_Opeional32.Subsystem);
+	PeSetText(&m_DllCharacteristics, File_Optional.image_Opeional32.DllCharacteristics);
 
 
-	//
-	_itow(File_Optional.image_Opeional32.MajorSubsystemVersion, str, 16);
-	m_MajorSubsystemVersion.SetWindowTextW(_wcsupr(str));
 
-	_itow(File_Optional.image_Opeional32.MinorSubsystemVersion, str, 16);
-	m_MinorSubsystemVersion.SetWindowTextW(_wcsupr(str));
+	PeSetText(&m_SizeOfStackReserve, File_Optional.image_Opeional32.SizeOfStackReserve);
+	PeSetText(&m_SizeofStackCommit, File_Optional.image_Opeional32.SizeOfStackCommit);
+	PeSetText(&m_SizeofHeapReserve, File_Optional.image_Opeional32.SizeOfHeapReserve);
+	PeSetText(&m_SizeOfHeapCommit, File_Optional.image_Opeional32.SizeOfHeapCommit);
+	PeSetText(&m_LoaderFlags, File_Optional.image_Opeional32.LoaderFlags);
 
-	_itow(File_Optional.image_Opeional32.Win32VersionValue, str, 16);
-	m_Win32VersionValue.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.SizeOfImage, str, 16);
-	m_SizeOfImage.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.SizeOfHeaders, str, 16);
-	m_SizeofHeaders.SetWindowTextW(_wcsupr(str));
-
-	//
-	_itow(File_Optional.image_Opeional32.CheckSum, str, 16);
-	m_CheckStem.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.Subsystem, str, 16);
-	m_Subsystem.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.DllCharacteristics, str, 16);
-	m_DllCharacteristics.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.SizeOfStackReserve, str, 16);
-	m_SizeOfStackReserve.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.SizeOfStackCommit, str, 16);
-	m_SizeofStackCommit.SetWindowTextW(_wcsupr(str));
-
-	//
-	_itow(File_Optional.image_Opeional32.SizeOfHeapReserve, str, 16);
-	m_SizeofHeapReserve.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.SizeOfHeapCommit, str, 16);
-	m_SizeOfHeapCommit.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.LoaderFlags, str, 16);
-	m_LoaderFlags.SetWindowTextW(_wcsupr(str));
-
-	_itow(File_Optional.image_Opeional32.NumberOfRvaAndSizes, str, 16);
-	m_NumberOfRvaAndSize.SetWindowTextW(_wcsupr(str));
-
+	PeSetText(&m_NumberOfRvaAndSize, File_Optional.image_Opeional32.NumberOfRvaAndSizes);
+	PeSetText(&m_Win32VersionValue, File_Optional.image_Opeional32.Win32VersionValue);
 }
 
 
